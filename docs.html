@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documentation — Simple MD</title>
+  <meta name="description" content="Help docs for Simple MD: installation, modes, charts, math, AI assistant, file associations, keyboard shortcuts, and troubleshooting." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="brand" href="./">
+      <span class="brand__mark">M</span>
+      <span>Simple&nbsp;MD</span>
+    </a>
+    <nav class="site-nav__links" aria-label="primary">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#modes">Modes</a>
+      <a href="index.html#download">Download</a>
+      <a href="docs.html" aria-current="page">Docs</a>
+      <a class="site-nav__github" href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener" aria-label="View source on GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a class="site-nav__cta" href="index.html#download">Get it</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="docs-layout">
+      <aside class="docs-toc" aria-label="On this page">
+        <p class="docs-toc__head">On this page</p>
+        <ul>
+          <li><a href="#install">Install &amp; first run</a></li>
+          <li><a href="#tour">A quick tour</a></li>
+          <li><a href="#workspaces">Workspaces &amp; files</a></li>
+          <li><a href="#modes">The four modes</a></li>
+          <li><a href="#math">Math with KaTeX</a></li>
+          <li><a href="#charts">Inline charts</a></li>
+          <li><a href="#import">HTTPS import</a></li>
+          <li><a href="#ai">Local AI assistant</a></li>
+          <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+          <li><a href="#assoc">Default app for <code>.md</code></a></li>
+          <li><a href="#privacy">Privacy &amp; data</a></li>
+          <li><a href="#trouble">Troubleshooting</a></li>
+        </ul>
+      </aside>
+
+      <article class="docs-content">
+        <h1>Help &amp; documentation</h1>
+        <p class="lede">Everything you need to get productive with Simple MD in about ten minutes. If you're stuck on something not covered here, the <a href="#trouble">troubleshooting section</a> has the most common gotchas.</p>
+
+        <div class="callout">
+          <div class="callout__icon">i</div>
+          <div class="callout__body">
+            <p><strong>The promise:</strong> your <code>.md</code> files stay <em>files</em>. Anything Simple MD does to a document — formatting, charts, math, AI edits — round-trips back to plain Markdown on disk.</p>
+          </div>
+        </div>
+
+        <p style="margin: 0 0 24px;">
+          <a class="gh-pill" href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            <span>Simple MD is open source</span>
+            <span class="gh-pill__label">·</span>
+            <span class="gh-pill__count">github.com/robrighter/simple-md</span>
+          </a>
+        </p>
+
+        <h2 id="install">Install &amp; first run</h2>
+        <p>Grab a build from the <a href="index.html#download">downloads page</a> for your platform:</p>
+        <ul>
+          <li><strong>macOS</strong> — universal <code>.dmg</code> for Apple Silicon and Intel. Drag <kbd>Simple MD.app</kbd> into <kbd>Applications</kbd>.</li>
+          <li><strong>Windows ARM64</strong> — for Surface Pro X, Copilot+ PCs, and other ARM-based machines. Native, no emulation.</li>
+          <li><strong>Windows x86_64</strong> — for 64-bit Intel and AMD processors. MSI installer, signed.</li>
+        </ul>
+        <p>On first launch you'll see a welcome document. Simple MD doesn't ask for an account, an email, or a license key. Just open a folder or a file and start writing.</p>
+
+        <h2 id="tour">A quick tour</h2>
+        <p>The window is two columns:</p>
+        <ul>
+          <li><strong>Left rail</strong> — workspace tree and a unified <em>Recents</em> list. Right-click any file or folder for rename / delete.</li>
+          <li><strong>Main column</strong> — a thin top bar with file actions and mode tabs, then the tab strip, then the document, then the status bar.</li>
+        </ul>
+        <p>The status bar at the bottom shows the last action, dirty indicator, current mode, word/line/character counts, and the file path. If the document came from an HTTPS URL, the path is a clickable link that opens the source.</p>
+
+        <h2 id="workspaces">Workspaces &amp; files</h2>
+        <p>A <strong>workspace</strong> is just a folder Simple MD knows about. You can have several open at once.</p>
+        <ul>
+          <li><strong>Open a folder</strong> — click <em>Open</em> in the top bar, or drop a folder onto the window.</li>
+          <li><strong>Create a note</strong> — click <em>New ▾ → Note</em>. Simple MD appends <code>.md</code> if you forgot.</li>
+          <li><strong>Create a folder</strong> — <em>New ▾ → Folder</em>.</li>
+          <li><strong>Rename / delete</strong> — right-click any tree entry. Workspace roots can only be removed (the underlying folder is left untouched).</li>
+          <li><strong>Standalone files</strong> — open a single <code>.md</code> without adding its parent folder.</li>
+          <li><strong>Scratchpads</strong> — click the <kbd>+</kbd> on the tab strip for a temporary unsaved buffer. Saving prompts for a filename.</li>
+        </ul>
+
+        <h3>Recognized extensions</h3>
+        <p>Simple MD treats <code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, and <code>.mkd</code> as Markdown. Other extensions are ignored in the workspace tree even if they happen to contain Markdown.</p>
+
+        <h2 id="modes">The four modes</h2>
+        <p>The mode tabs are in the top bar. Each open document remembers its mode independently, so you can have a draft in <em>Text</em> and a finished doc in <em>Display</em> at the same time.</p>
+
+        <h3>Display</h3>
+        <p>Read-only render. GitHub-flavored Markdown, syntax-highlighted code, KaTeX math, and inline charts. Use this when you're proofing, presenting, or just want a calm reading view.</p>
+
+        <h3>Text</h3>
+        <p>Pure Markdown source in CodeMirror 6. Syntax highlighting, list continuation, bracket matching, and a monospaced editing surface. Power-users live here.</p>
+
+        <h3>Hybrid</h3>
+        <p>True WYSIWYG. Type into the rendered view and Markdown is generated underneath, losslessly. Powered by <a href="https://milkdown.dev/" rel="noopener">Milkdown</a> and <a href="https://prosemirror.net/" rel="noopener">ProseMirror</a>. Best for prose-heavy writing.</p>
+
+        <blockquote>
+          <p><strong>Heads-up:</strong> Hybrid mode keys on the active document. Switching documents remounts the editor with fresh state, so your cursor jumps to the start. Switching <em>modes</em> on the same document is fine.</p>
+        </blockquote>
+
+        <h3>Split</h3>
+        <p>Source on the left, rendered preview on the right. The two panes scroll together. Useful when you're tuning a tricky table or a chart spec.</p>
+
+        <h2 id="math">Math with KaTeX</h2>
+        <p>Inline math goes between dollar signs:</p>
+        <pre><code>The mass-energy relation is $E = mc^2$.</code></pre>
+        <p>Block math uses double dollars:</p>
+        <pre><code>$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$</code></pre>
+        <p>KaTeX is bundled — Simple MD does not download fonts at runtime. Bad LaTeX renders red inline rather than breaking the document.</p>
+
+        <h2 id="charts">Inline charts</h2>
+        <p>A fenced <code>chart</code> block is a JSON spec that renders as a real chart in Display, Hybrid, and the preview half of Split:</p>
+        <pre><code>```chart
+{
+  "type": "bar",
+  "title": "Q2 revenue by region",
+  "data": [
+    { "region": "NA", "revenue": 482 },
+    { "region": "EU", "revenue": 311 },
+    { "region": "APAC", "revenue": 207 }
+  ]
+}
+```</code></pre>
+        <p>Supported types: <code>bar</code>, <code>line</code>, <code>area</code>, and <code>pie</code>. Simple MD infers the x-axis key and series when you omit them, so most blocks are just <code>{ "type": "bar", "data": [...] }</code>. A bad spec renders an inline error panel — never throws.</p>
+
+        <h2 id="import">HTTPS import</h2>
+        <p>Click <em>Import…</em> in the top bar and paste any HTTPS URL ending in a Markdown file. GitHub <code>blob</code> URLs are auto-rewritten to <code>raw.githubusercontent.com</code>.</p>
+        <p>Imported documents open as read-only buffers identified by their URL. Save them with <em>Save</em> to land them in your workspace.</p>
+        <p>Safety guard rails:</p>
+        <ul>
+          <li>HTTPS only — plain HTTP is rejected.</li>
+          <li>10 MB cap on the response.</li>
+          <li>30-second timeout, max 5 redirects.</li>
+          <li>Content-type or extension or heuristic must look like Markdown.</li>
+        </ul>
+
+        <h2 id="ai">Local AI assistant</h2>
+        <p>The AI assistant is <strong>opt-in and entirely local</strong>. Click the AI callout in the top bar to open the right-edge panel. The first time, you'll be asked to:</p>
+        <ol>
+          <li>Accept Google's Gemma terms of use (one-time, stored locally).</li>
+          <li>Choose a model variant.</li>
+          <li>Download it (one click, with a progress bar).</li>
+        </ol>
+
+        <h3>Variants</h3>
+        <ul>
+          <li><strong>Gemma 4 E2B (Q8_0)</strong> — about 5 GB. Higher quality, more memory.</li>
+          <li><strong>Gemma 4 E4B (Q4_K_M)</strong> — about 2.5 GB. Lighter, faster, still very capable.</li>
+        </ul>
+
+        <h3>Using it</h3>
+        <p>The active document is auto-injected as context on every turn. After each assistant reply you have three actions:</p>
+        <ul>
+          <li><strong>Insert</strong> — drops the reply at the cursor.</li>
+          <li><strong>Append</strong> — adds the reply at the end of the document.</li>
+          <li><strong>Replace</strong> — replaces the current selection (if any), and shows a side-by-side diff first because it's destructive.</li>
+        </ul>
+        <p>Insert / Replace fall back to Append when the editor isn't mounted (i.e. you're in Display mode) — Simple MD shows a status pill explaining why.</p>
+
+        <div class="callout">
+          <div class="callout__icon">!</div>
+          <div class="callout__body">
+            <p><strong>Network policy:</strong> the only network call the AI feature makes is the initial model download from a public HuggingFace mirror. Inference happens against a local <code>llama-server</code> sidecar on a random free port. Nothing leaves the machine.</p>
+          </div>
+        </div>
+
+        <h2 id="shortcuts">Keyboard shortcuts</h2>
+        <p>Modifier is <kbd>⌘</kbd> on macOS and <kbd>Ctrl</kbd> on Windows.</p>
+
+        <div class="kbd-row"><span>Save the active document</span><span class="k"><kbd>⌘</kbd><kbd>S</kbd></span></div>
+        <div class="kbd-row"><span>Open a file</span><span class="k"><kbd>⌘</kbd><kbd>O</kbd></span></div>
+        <div class="kbd-row"><span>Open a folder as a workspace</span><span class="k"><kbd>⌘</kbd><kbd>⇧</kbd><kbd>O</kbd></span></div>
+        <div class="kbd-row"><span>New scratchpad</span><span class="k"><kbd>⌘</kbd><kbd>N</kbd></span></div>
+        <div class="kbd-row"><span>Switch to Display</span><span class="k"><kbd>⌘</kbd><kbd>1</kbd></span></div>
+        <div class="kbd-row"><span>Switch to Text</span><span class="k"><kbd>⌘</kbd><kbd>2</kbd></span></div>
+        <div class="kbd-row"><span>Switch to Hybrid</span><span class="k"><kbd>⌘</kbd><kbd>3</kbd></span></div>
+        <div class="kbd-row"><span>Switch to Split</span><span class="k"><kbd>⌘</kbd><kbd>4</kbd></span></div>
+        <div class="kbd-row"><span>Close current tab</span><span class="k"><kbd>⌘</kbd><kbd>W</kbd></span></div>
+        <div class="kbd-row"><span>Toggle sidebar</span><span class="k"><kbd>⌘</kbd><kbd>B</kbd></span></div>
+        <div class="kbd-row"><span>Toggle AI panel</span><span class="k"><kbd>⌘</kbd><kbd>K</kbd></span></div>
+
+        <h2 id="assoc">Default app for <code>.md</code> files</h2>
+        <p>Simple MD registers itself as a handler for <code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, and <code>.mkd</code>. To make it your default:</p>
+        <h3>macOS</h3>
+        <ol>
+          <li>Right-click a <code>.md</code> file in Finder, choose <em>Get Info</em>.</li>
+          <li>Under <em>Open with</em>, pick <strong>Simple MD</strong>.</li>
+          <li>Click <em>Change All…</em> to apply to every <code>.md</code> file.</li>
+        </ol>
+        <h3>Windows</h3>
+        <ol>
+          <li>Right-click a <code>.md</code> file in Explorer, choose <em>Open with → Choose another app</em>.</li>
+          <li>Pick <strong>Simple MD</strong> and check <em>Always use this app</em>.</li>
+        </ol>
+        <p>Once associated, double-clicking a Markdown file opens it in Simple MD even if the app isn't running. Drag-and-drop onto the dock / taskbar icon also works.</p>
+
+        <h2 id="privacy">Privacy &amp; data</h2>
+        <ul>
+          <li><strong>No telemetry.</strong> Simple MD does not phone home. There's no analytics SDK, no crash uploader, no opt-out toggle for "anonymous usage."</li>
+          <li><strong>No accounts.</strong> No sign-in, no license key, no email capture.</li>
+          <li><strong>No cloud sync.</strong> Your files live on your disk. Use any sync tool you like (iCloud, Dropbox, Syncthing) — Simple MD doesn't care.</li>
+          <li><strong>Sandboxed network.</strong> The only outbound calls are HTTPS imports you initiate and the optional one-time AI model download.</li>
+        </ul>
+        <p>App-state metadata (recents, last-opened workspaces, AI license acceptance, AI model selection) lives in your OS's per-app data directory and never leaves the machine.</p>
+
+        <h2 id="trouble">Troubleshooting</h2>
+
+        <h3>The app says my Markdown file is "missing"</h3>
+        <p>Simple MD watches the filesystem and surfaces external changes via a banner above the document. If a file is moved or deleted by another tool, the tab will show a missing indicator. Reopen from the sidebar tree or use <em>Recents</em>.</p>
+
+        <h3>An HTTPS import won't open</h3>
+        <p>Common causes:</p>
+        <ul>
+          <li>The URL is HTTP, not HTTPS — Simple MD only fetches over TLS.</li>
+          <li>The response is larger than 10 MB.</li>
+          <li>The server returned a non-Markdown content type and the URL doesn't end in a Markdown extension.</li>
+          <li>The host blocks non-browser User-Agents — try saving the file locally and opening it instead.</li>
+        </ul>
+
+        <h3>The AI panel is stuck on "Starting…"</h3>
+        <p>Simple MD spawns <code>llama-server</code> and polls <code>/health</code> for up to 60 seconds. If the process dies before that, you'll see the tail of its stderr. Most often this is:</p>
+        <ul>
+          <li><strong>Not enough RAM</strong> — try the smaller E4B variant.</li>
+          <li><strong>Model file corrupted mid-download</strong> — open the Models dialog and re-download. (Resumable downloads are on the roadmap; for now, retry restarts from scratch.)</li>
+          <li><strong>Antivirus quarantined the sidecar</strong> — whitelist the Simple MD app folder.</li>
+        </ul>
+
+        <h3>The Hybrid editor lost my cursor when I switched documents</h3>
+        <p>Expected — the Hybrid editor remounts per document, so cursor position resets to the start. Switching <em>modes</em> on the same document keeps the cursor.</p>
+
+        <h3>A chart block won't render</h3>
+        <p>A bad <code>chart</code> JSON spec renders an inline red <em>chart-error</em> panel with the parser's complaint. Common issues are trailing commas, missing <code>data</code> arrays, or a <code>type</code> outside <code>bar | line | area | pie</code>.</p>
+
+        <h3>Where are my settings stored?</h3>
+        <ul>
+          <li><strong>macOS:</strong> <code>~/Library/Application Support/Simple MD/</code></li>
+          <li><strong>Windows:</strong> <code>%APPDATA%\Simple MD\</code></li>
+        </ul>
+        <p>The folder contains <code>ai-settings.json</code>, downloaded model files (<code>models/*.gguf</code>), and any other per-app metadata. Deleting the folder is a clean reset.</p>
+
+        <hr style="margin:48px 0;border:0;border-top:1px solid var(--border);" />
+        <p style="color:var(--ink-muted);font-size:14px;">Still stuck? File an issue at <a href="https://github.com/robrighter/simple-md/issues" target="_blank" rel="noopener">github.com/robrighter/simple-md/issues</a> with your OS, app version, and a short reproduction. Logs from <code>~/Library/Logs/Simple MD/</code> (macOS) or <code>%LOCALAPPDATA%\Simple MD\logs\</code> (Windows) help a lot.</p>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <div>
+      <a class="brand" href="./">
+        <span class="brand__mark">M</span>
+        <span style="color:var(--ink)">Simple MD</span>
+      </a>
+    </div>
+    <div class="site-foot__links">
+      <a href="docs.html">Documentation</a>
+      <a href="index.html#download">Download</a>
+      <a href="index.html#features">Features</a>
+      <a href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px;margin-right:4px;"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>Source on GitHub</a>
+      <a href="https://github.com/robrighter/simple-md/releases" target="_blank" rel="noopener">Releases</a>
+      <a href="https://github.com/robrighter/simple-md/issues" target="_blank" rel="noopener">Issues</a>
+    </div>
+    <div>© 2026 Simple MD · Local-first since day one.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+</script>
+
+</body>
+</html>

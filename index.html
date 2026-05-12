@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple MD — A calm, local-first Markdown editor</title>
+  <meta name="description" content="Simple MD is a local-first desktop Markdown editor. Four view modes, inline charts, KaTeX math, folder workspaces, and an on-device AI assistant. macOS and Windows." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:title" content="Simple MD" />
+  <meta property="og:description" content="A calm, local-first Markdown editor. Your files stay on disk. Your writing stays yours." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="brand" href="./">
+      <span class="brand__mark">M</span>
+      <span>Simple&nbsp;MD</span>
+    </a>
+    <nav class="site-nav__links" aria-label="primary">
+      <a href="#features">Features</a>
+      <a href="#modes">Modes</a>
+      <a href="#download">Download</a>
+      <a href="docs.html">Docs</a>
+      <a class="site-nav__github" href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener" aria-label="View source on GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        GitHub
+      </a>
+      <a class="site-nav__cta" href="#download">Get it</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__inner">
+      <span class="hero__eyebrow">Local-first · Desktop · Free</span>
+      <h1>The Markdown editor that <em>works the way you expect</em>.</h1>
+      <p class="hero__lede">
+        Simple MD edits, reads, and renders Markdown the way you'd hope a desktop app would.
+        No cloud account. No proprietary store. Your <code style="background:rgba(122,31,43,.08);padding:1px 6px;border-radius:4px;font-size:.92em">.md</code> files
+        stay right where you put them.
+      </p>
+
+      <div class="hero__downloads" id="hero-downloads">
+        <a class="btn btn--ghost" href="downloads/Simple-MD-0.1.0-Mac-Apple-Silicon.zip" data-download="mac" download>
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.456 2.232-1.273 3.043-.872.866-2.292 1.531-3.43 1.443-.14-1.119.42-2.282 1.213-3.022.886-.83 2.376-1.452 3.49-1.464zM20.5 17.21c-.55 1.273-.812 1.842-1.521 2.969-.989 1.572-2.385 3.529-4.114 3.546-1.535.014-1.93-1.001-4.014-.987-2.085.014-2.519.999-4.057.985-1.73-.018-3.05-1.78-4.04-3.353C-.034 16.32-.282 11.41 1.412 8.804c1.205-1.85 3.106-2.928 4.892-2.928 1.819 0 2.962 1 4.464 1 1.456 0 2.342-1.001 4.444-1.001 1.59 0 3.276.866 4.477 2.366-3.937 2.157-3.298 7.78.811 8.97z"/></svg>
+          <span>
+            <span class="btn__os">macOS</span><br/>
+            Apple Silicon
+          </span>
+        </a>
+        <a class="btn btn--ghost" href="downloads/Simple-MD_0.1.0_arm64-setup.exe" data-download="win-arm" download>
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 11.25 4v8H3V5.5zM12.75 3.7 22 2v9.5h-9.25V3.7zM3 12.5h8.25v8L3 19V12.5zM12.75 12.5H22V22l-9.25-1.7v-7.8z"/></svg>
+          <span>
+            <span class="btn__os">Windows</span><br/>
+            ARM64
+          </span>
+        </a>
+        <a class="btn btn--ghost" href="downloads/Simple-MD_0.1.0_x64-setup.exe" data-download="win-x64" download>
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 11.25 4v8H3V5.5zM12.75 3.7 22 2v9.5h-9.25V3.7zM3 12.5h8.25v8L3 19V12.5zM12.75 12.5H22V22l-9.25-1.7v-7.8z"/></svg>
+          <span>
+            <span class="btn__os">Windows</span><br/>
+            x86_64 / Intel
+          </span>
+        </a>
+      </div>
+
+      <div class="hero__meta">
+        <span>Open source</span>
+        <span>Built with Tauri 2 + Rust</span>
+        <span>~12 MB install</span>
+        <span>No telemetry</span>
+      </div>
+
+      <a class="gh-pill" href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        <span>robrighter/simple-md</span>
+        <span class="gh-pill__label">·</span>
+        <span class="gh-pill__count">★ Star on GitHub</span>
+      </a>
+
+      <div class="shot-frame shot-frame--bare">
+        <img class="shot-img" src="screenshots/split-mode.png" alt="Simple MD with the workspace sidebar open and a Markdown document rendered with tables, code blocks, and a sidebar tree" />
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__eyebrow">Why Simple MD</span>
+        <h2>Calm, capable, and on your side.</h2>
+        <p>Built for people who keep their notes in folders and want them to <em>stay</em> there. No lock-in, no surprise migrations, no "we've decided to deprecate the desktop app."</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="feature__icon">⌂</div>
+          <h3>Local-first by design</h3>
+          <p>Your files live on disk in normal folders. No proprietary database, no cloud account, no migration when the app shuts down.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">≡</div>
+          <h3>Four view modes</h3>
+          <p>Display, Text, Hybrid (true WYSIWYG), and Split — switch instantly without changing apps or losing your place.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">∑</div>
+          <h3>Math &amp; charts inline</h3>
+          <p>First-class KaTeX for inline and block LaTeX. Drop a fenced <code>chart</code> block of JSON and it renders as a real chart.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">▸</div>
+          <h3>Folder workspaces</h3>
+          <p>Open a folder, get a real file tree. Right-click to rename, move, or delete — all changes go straight to the filesystem.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">↗</div>
+          <h3>OS file association</h3>
+          <p>Set Simple MD as your default for <code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, and <code>.mkd</code>. Double-click in Finder or Explorer — it just opens.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">✦</div>
+          <h3>On-device AI</h3>
+          <p>An optional local AI assistant runs Gemma 4 entirely on your machine. Insert, replace, or append straight into the document.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">↘</div>
+          <h3>HTTPS import</h3>
+          <p>Paste any HTTPS URL — including <code>github.com/.../blob/...</code> links — and Simple MD fetches the raw Markdown safely.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">◔</div>
+          <h3>Fast at scale</h3>
+          <p>Built on CodeMirror 6 and ProseMirror. Big notes scroll smoothly; preview rendering stays off the typing critical path.</p>
+        </article>
+        <article class="feature">
+          <div class="feature__icon">⌫</div>
+          <h3>Lossless round-trip</h3>
+          <p>Hybrid mode preserves your Markdown exactly. Edit visually, save, and your source stays clean.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="modes" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg-strong) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__eyebrow">Four ways to look at one file</span>
+        <h2>One document. Four modes. Zero lock-in.</h2>
+        <p>The active document is always front and center. Switch modes with the tabs in the top bar, or with a keyboard shortcut — your cursor and scroll position come along.</p>
+      </div>
+
+      <div class="modes">
+        <article class="mode-card">
+          <div class="mode-card__shot">
+            <img src="screenshots/hybrid-mode.png" alt="Display mode rendering a long Markdown document with tables, code blocks, and the sidebar open" loading="lazy" />
+          </div>
+          <div class="mode-card__body">
+            <span class="mode-card__tag">Display</span>
+            <h3>Read-only render</h3>
+            <p>Polished typography, GitHub-flavored Markdown, syntax-highlighted code, KaTeX math, and inline charts. Distraction-light reading and proofing.</p>
+          </div>
+        </article>
+
+        <article class="mode-card">
+          <div class="mode-card__shot">
+            <img src="screenshots/text-mode.png" alt="Text mode showing raw Markdown source in the CodeMirror 6 editor with line numbers" loading="lazy" />
+          </div>
+          <div class="mode-card__body">
+            <span class="mode-card__tag">Text</span>
+            <h3>Raw Markdown source</h3>
+            <p>Pure source editing in CodeMirror 6 with syntax highlighting, list continuation, and bracket matching. Power users feel right at home.</p>
+          </div>
+        </article>
+
+        <article class="mode-card">
+          <div class="mode-card__shot">
+            <img src="screenshots/inline-charts.png" alt="Hybrid mode with rich text rendered in place while Markdown remains the source" loading="lazy" />
+          </div>
+          <div class="mode-card__body">
+            <span class="mode-card__tag">Hybrid</span>
+            <h3>True WYSIWYG, lossless</h3>
+            <p>Edit rich text directly while Markdown stays the source. Powered by Milkdown / ProseMirror with lossless round-trip.</p>
+          </div>
+        </article>
+
+        <article class="mode-card">
+          <div class="mode-card__shot">
+            <img src="screenshots/ai-assistant.png" alt="Split mode showing raw Markdown source on the left and the rendered preview on the right" loading="lazy" />
+          </div>
+          <div class="mode-card__body">
+            <span class="mode-card__tag">Split</span>
+            <h3>Source on the left, preview on the right</h3>
+            <p>Type in raw Markdown and watch the rendered version update beside you. Synchronized scrolling, no fuss.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="showcase">
+        <div class="shot-frame shot-frame--bare">
+          <img class="shot-img" src="screenshots/hero.png" alt="Simple MD rendering an area chart and a bar chart inline from fenced chart code blocks" loading="lazy" />
+        </div>
+        <div class="showcase__copy">
+          <span class="eyebrow">Inline charts</span>
+          <h3>Charts that live <em>inside</em> your notes.</h3>
+          <p>
+            Drop a fenced <code>chart</code> block with a JSON spec and Simple MD renders it as a real Recharts visualization in
+            preview and hybrid mode — bar, line, area, and pie supported. The source stays plain Markdown,
+            so the file is still readable in any other editor on earth.
+          </p>
+          <ul class="showcase__list">
+            <li>JSON-backed, version-control friendly</li>
+            <li>Series and axes inferred when omitted</li>
+            <li>Errors render an inline panel — never throw</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="showcase showcase--reverse">
+        <div class="shot-frame shot-frame--bare">
+          <img class="shot-img" src="screenshots/display-mode.png" alt="Simple MD with the on-device AI assistant panel docked on the right next to a Markdown scratchpad" loading="lazy" />
+        </div>
+        <div class="showcase__copy">
+          <span class="eyebrow">Local AI assistant</span>
+          <h3>An assistant that <em>stays on your machine</em>.</h3>
+          <p>
+            Optional, opt-in, and entirely local. Simple MD bundles a tiny <code>llama-server</code> sidecar
+            and downloads either Gemma&nbsp;4 E2B (~5&nbsp;GB) or E4B (~2.5&nbsp;GB) on first use. Nothing
+            leaves your machine. Ever.
+          </p>
+          <ul class="showcase__list">
+            <li>Active document auto-attached as context</li>
+            <li>Insert · Replace · Append straight into the editor</li>
+            <li>Replace shows a side-by-side diff before committing</li>
+            <li>License-gated by Google's Gemma terms · one-time</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="showcase">
+        <div class="shot-frame shot-frame--bare">
+          <img class="shot-img" src="screenshots/math-katex.png" alt="Inline LaTeX and block equations rendered crisply with KaTeX in Simple MD" loading="lazy" />
+        </div>
+        <div class="showcase__copy">
+          <span class="eyebrow">Math, done right</span>
+          <h3>LaTeX that just shows up.</h3>
+          <p>
+            Inline <code>$…$</code> and block <code>$$…$$</code> render through KaTeX in
+            Display, Hybrid, and Split mode. No plugin to install, no server to reach, no shimmer
+            of "fetching fonts" — Simple MD bundles everything it needs.
+          </p>
+          <ul class="showcase__list">
+            <li>Inline and block math</li>
+            <li>Friendly errors — bad LaTeX renders red, never breaks the doc</li>
+            <li>Print-quality output for export to PDF or HTML</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__eyebrow">The full list</span>
+        <h2>Everything Simple MD does, on one page.</h2>
+        <p>If you've shopped for a Markdown editor before, you know the dance. Here's the unvarnished feature checklist — no asterisks, no "coming soon."</p>
+      </div>
+
+      <ul class="checklist">
+        <li><div><strong>Display mode</strong><span> — read-only render with GFM, syntax highlighting, KaTeX math.</span></div></li>
+        <li><div><strong>Text mode</strong><span> — raw Markdown in CodeMirror 6 with syntax highlighting.</span></div></li>
+        <li><div><strong>Hybrid mode</strong><span> — true WYSIWYG via Milkdown / ProseMirror, lossless Markdown round-trip.</span></div></li>
+        <li><div><strong>Split mode</strong><span> — source on the left, rendered preview on the right.</span></div></li>
+        <li><div><strong>Folder workspaces</strong><span> — open a folder, browse the tree, edit in place.</span></div></li>
+        <li><div><strong>Right-click rename / delete</strong><span> — straight from the sidebar tree.</span></div></li>
+        <li><div><strong>Standalone file open</strong><span> — open one <code>.md</code> without adding its parent folder.</span></div></li>
+        <li><div><strong>Tabbed editing</strong><span> — multiple documents open, drag to reorder.</span></div></li>
+        <li><div><strong>Scratchpads</strong><span> — unsaved drafts via the <code>+</code> on the tab strip.</span></div></li>
+        <li><div><strong>Recent files &amp; workspaces</strong><span> — eight slots each, persisted locally.</span></div></li>
+        <li><div><strong>Inline charts</strong><span> — fenced <code>chart</code> JSON renders as bar / line / area / pie.</span></div></li>
+        <li><div><strong>KaTeX math</strong><span> — inline and block LaTeX, bundled offline.</span></div></li>
+        <li><div><strong>Code highlighting</strong><span> — fenced code blocks rendered with syntax colors.</span></div></li>
+        <li><div><strong>GitHub-flavored Markdown</strong><span> — tables, task lists, strikethrough, autolinks.</span></div></li>
+        <li><div><strong>HTTPS Markdown import</strong><span> — including auto-conversion of GitHub blob URLs.</span></div></li>
+        <li><div><strong>OS file association</strong><span> — default app for <code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, <code>.mkd</code>.</span></div></li>
+        <li><div><strong>External file change banner</strong><span> — see and reload edits from other apps safely.</span></div></li>
+        <li><div><strong>Status bar</strong><span> — word, line, and character counts plus the current path.</span></div></li>
+        <li><div><strong>Local AI assistant</strong><span> — optional Gemma 4 E2B / E4B, runs entirely on-device.</span></div></li>
+        <li><div><strong>AI document mutation</strong><span> — Insert / Replace / Append assistant replies into the editor.</span></div></li>
+        <li><div><strong>Side-by-side replace preview</strong><span> — diff before destructive AI edits.</span></div></li>
+        <li><div><strong>Sandboxed remote fetch</strong><span> — HTTPS only, 10 MB cap, content-type validation.</span></div></li>
+        <li><div><strong>Sanitized preview HTML</strong><span> — no surprise script execution from untrusted Markdown.</span></div></li>
+        <li><div><strong>Cross-platform</strong><span> — macOS, Windows ARM64, and Windows x86_64 builds.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="download" class="section--downloads">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__eyebrow">Download</span>
+        <h2>Pick your platform.</h2>
+        <p>Free and unbundled. No installer dark patterns, no wrapper, no "agree to 17 things first." Just an app you double-click.</p>
+      </div>
+
+      <div class="download-grid">
+        <article class="download-card" id="download-mac">
+          <div class="download-card__head">
+            <div>
+              <span class="download-card__os">macOS</span>
+              <h3>Universal · Apple Silicon &amp; Intel</h3>
+            </div>
+            <div class="download-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.456 2.232-1.273 3.043-.872.866-2.292 1.531-3.43 1.443-.14-1.119.42-2.282 1.213-3.022.886-.83 2.376-1.452 3.49-1.464zM20.5 17.21c-.55 1.273-.812 1.842-1.521 2.969-.989 1.572-2.385 3.529-4.114 3.546-1.535.014-1.93-1.001-4.014-.987-2.085.014-2.519.999-4.057.985-1.73-.018-3.05-1.78-4.04-3.353C-.034 16.32-.282 11.41 1.412 8.804c1.205-1.85 3.106-2.928 4.892-2.928 1.819 0 2.962 1 4.464 1 1.456 0 2.342-1.001 4.444-1.001 1.59 0 3.276.866 4.477 2.366-3.937 2.157-3.298 7.78.811 8.97z"/></svg>
+            </div>
+          </div>
+          <p>Native build for Apple Silicon (M1, M2, M3 and later). Ships as a signed zip — extract and run the included <code>Install Simple MD.command</code>.</p>
+          <div class="download-card__meta"><span>~10 MB</span><span>arm64</span><span>macOS 11+</span></div>
+          <a class="btn btn--primary" href="downloads/Simple-MD-0.1.0-Mac-Apple-Silicon.zip" data-download="mac" download>Download for macOS</a>
+        </article>
+
+        <article class="download-card" id="download-win-arm">
+          <div class="download-card__head">
+            <div>
+              <span class="download-card__os">Windows · ARM64</span>
+              <h3>Windows on ARM</h3>
+            </div>
+            <div class="download-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 11.25 4v8H3V5.5zM12.75 3.7 22 2v9.5h-9.25V3.7zM3 12.5h8.25v8L3 19V12.5zM12.75 12.5H22V22l-9.25-1.7v-7.8z"/></svg>
+            </div>
+          </div>
+          <p>Native build for Surface Pro X, Copilot+ PCs, and other ARM-based Windows machines. No emulation, full speed.</p>
+          <div class="download-card__meta"><span>~14 MB</span><span>ARM64</span><span>Windows 11</span></div>
+          <a class="btn btn--primary" href="downloads/Simple-MD_0.1.0_arm64-setup.exe" data-download="win-arm" download>Download for Windows ARM</a>
+        </article>
+
+        <article class="download-card" id="download-win-x64">
+          <div class="download-card__head">
+            <div>
+              <span class="download-card__os">Windows · x86_64</span>
+              <h3>Windows Intel / AMD</h3>
+            </div>
+            <div class="download-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 11.25 4v8H3V5.5zM12.75 3.7 22 2v9.5h-9.25V3.7zM3 12.5h8.25v8L3 19V12.5zM12.75 12.5H22V22l-9.25-1.7v-7.8z"/></svg>
+            </div>
+          </div>
+          <p>For the rest of the Windows world: 64-bit Intel and AMD processors. Ships as a signed <code>.exe</code> installer.</p>
+          <div class="download-card__meta"><span>~14 MB</span><span>x86_64</span><span>Windows 10+</span></div>
+          <a class="btn btn--primary" href="downloads/Simple-MD_0.1.0_x64-setup.exe" data-download="win-x64" download>Download for Windows x86</a>
+        </article>
+      </div>
+
+      <div class="linux-callout">
+        <span>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+          <strong>On Linux?</strong> No prebuilt binaries yet — clone the repo and build it yourself. It's a <code>npm install &amp;&amp; npm run tauri:build</code> away.
+        </span>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">View build instructions on GitHub</a>
+      </div>
+
+      <p style="text-align:center;margin:28px 0 0;color:var(--ink-muted);font-size:13px;">
+        Looking for older builds, checksums, or release notes? See the <a href="https://github.com/robrighter/simple-md/releases" target="_blank" rel="noopener">releases page on GitHub</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section--oss">
+    <div class="container">
+      <div class="oss-card">
+        <div class="oss-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        </div>
+        <div>
+          <h2>Simple MD is open source.</h2>
+          <p>Read the code, file an issue, send a pull request, or fork it and make it your own. The whole app — Rust backend, React frontend, build pipeline — lives at <code style="background:rgba(255,240,210,0.1);padding:1px 6px;border-radius:4px;font-size:.92em;color:#f3e5cf;">github.com/robrighter/simple-md</code>.</p>
+        </div>
+        <div class="oss-card__actions">
+          <a class="btn btn--primary" href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            Star on GitHub
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/robrighter/simple-md/issues" target="_blank" rel="noopener">Report an issue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container--narrow">
+      <div class="section-head">
+        <span class="section-head__eyebrow">Common questions</span>
+        <h2>Quick answers.</h2>
+        <p>The full guide lives in the <a href="docs.html">docs</a> — these are the questions people ask first.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq" open>
+          <summary>Where do my notes live?</summary>
+          <div class="faq__body">
+            <p>Wherever you put them. Simple MD opens a folder you already have (or a single <code>.md</code> file) and edits the actual files on disk. There is no proprietary database, no <code>.simplemd</code> store, and no cloud account.</p>
+            <p>The filesystem is the source of truth. If you uninstall Simple MD tomorrow, your notes are still where they always were.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Is Simple MD free and open source?</summary>
+          <div class="faq__body">
+            <p>Yes — both. Simple MD is free to download and use on every supported platform, and the full source lives at <a href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">github.com/robrighter/simple-md</a>. Read the code, file an issue, send a pull request, or fork it.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does the AI assistant send my notes anywhere?</summary>
+          <div class="faq__body">
+            <p>No. The AI assistant is opt-in and runs entirely on your machine. We bundle a tiny <code>llama-server</code> sidecar and download a Gemma 4 model file (E2B, ~5 GB, or E4B, ~2.5 GB) on first run. Inference happens locally; nothing leaves the device.</p>
+            <p>If you never click the AI button, no model is downloaded and no AI code runs.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Can I use Simple MD without installing the AI?</summary>
+          <div class="faq__body">
+            <p>Absolutely. The AI assistant is one button in the sidebar. Ignore it and Simple MD is a clean, fast, fully-featured Markdown editor. The model is only fetched the first time you accept the Gemma terms and pick a variant.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does it work offline?</summary>
+          <div class="faq__body">
+            <p>Yes. The only network features are <em>HTTPS import</em> (when you paste a URL) and the one-time AI model download. Everything else — editing, rendering, charts, math, file operations — works fully offline.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What about Linux?</summary>
+          <div class="faq__body">
+            <p>Linux is in scope per the spec but not yet a published build. Tauri makes it cheap to ship — once macOS and Windows are stable, Linux <code>.deb</code> and <code>AppImage</code> bundles are next.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Do you collect telemetry?</summary>
+          <div class="faq__body">
+            <p>No. Simple MD does not phone home. There is no analytics SDK, no crash uploader, no "anonymous usage" toggle. The app makes network requests only when you explicitly ask it to (HTTPS import, model download).</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="install-modal" id="install-modal" role="dialog" aria-modal="true" aria-labelledby="install-modal-title" aria-hidden="true">
+  <div class="install-modal__panel" role="document">
+    <button class="install-modal__close" type="button" aria-label="Close" data-install-close>×</button>
+
+    <template id="install-mac">
+      <span class="install-modal__eyebrow">Download started</span>
+      <h2 id="install-modal-title">Install Simple MD for macOS</h2>
+      <p class="install-modal__lede">Your download should be in progress. Follow these three steps to finish installing.</p>
+      <ol>
+        <li>
+          <strong>Download the latest zip.</strong><br/>
+          <em>Simple MD 0.1.0 Mac Apple Silicon</em> — should already be downloading. If not, <a href="downloads/Simple-MD-0.1.0-Mac-Apple-Silicon.zip" download>start it manually</a>.
+        </li>
+        <li>
+          <strong>Open the zip.</strong><br/>
+          Safari may automatically extract it into your <code>Downloads</code> folder.
+        </li>
+        <li>
+          <strong>Run this in Terminal:</strong>
+          <pre><code>~/Downloads/Simple\ MD\ 0.1.0\ Mac\ Apple\ Silicon/Install\ Simple\ MD.command</code></pre>
+          <button class="install-modal__copy" type="button" data-copy="~/Downloads/Simple\ MD\ 0.1.0\ Mac\ Apple\ Silicon/Install\ Simple\ MD.command">Copy command</button>
+        </li>
+      </ol>
+      <p style="margin:0;color:var(--ink-soft);font-size:14px;">Simple MD will be installed into <code>/Applications</code> and opened automatically.</p>
+      <div class="install-modal__footer">
+        <span class="meta">macOS 11+ · Apple Silicon</span>
+        <button class="btn btn--primary btn--sm" type="button" data-install-close>Got it</button>
+      </div>
+    </template>
+
+    <template id="install-win-x64">
+      <span class="install-modal__eyebrow">Download started</span>
+      <h2 id="install-modal-title">Install Simple MD for Windows</h2>
+      <p class="install-modal__lede">Your download should be in progress. Follow these steps to finish installing.</p>
+      <ol>
+        <li>
+          <strong>Download the latest Windows installer.</strong><br/>
+          <em>Simple MD 0.1.0 Windows (x86_64)</em> — should already be downloading. If not, <a href="downloads/Simple-MD_0.1.0_x64-setup.exe" download>start it manually</a>.
+        </li>
+        <li>
+          <strong>Open the downloaded installer.</strong>
+          <pre><code>Simple MD_0.1.0_x64-setup.exe</code></pre>
+        </li>
+        <li>
+          <strong>If Windows SmartScreen appears, choose:</strong>
+          <pre><code>More info → Run anyway</code></pre>
+        </li>
+        <li><strong>Follow the installer prompts.</strong></li>
+        <li><strong>Launch Simple MD from the Start Menu.</strong></li>
+      </ol>
+      <div class="install-modal__footer">
+        <span class="meta">Windows 10+ · x86_64</span>
+        <button class="btn btn--primary btn--sm" type="button" data-install-close>Got it</button>
+      </div>
+    </template>
+
+    <template id="install-win-arm">
+      <span class="install-modal__eyebrow">Download started</span>
+      <h2 id="install-modal-title">Install Simple MD for Windows (ARM)</h2>
+      <p class="install-modal__lede">Your download should be in progress. Follow these steps to finish installing.</p>
+      <ol>
+        <li>
+          <strong>Download the latest Windows ARM installer.</strong><br/>
+          <em>Simple MD 0.1.0 Windows (ARM64)</em> — should already be downloading. If not, <a href="downloads/Simple-MD_0.1.0_arm64-setup.exe" download>start it manually</a>.
+        </li>
+        <li>
+          <strong>Open the downloaded installer.</strong>
+          <pre><code>Simple MD_0.1.0_arm64-setup.exe</code></pre>
+        </li>
+        <li>
+          <strong>If Windows SmartScreen appears, choose:</strong>
+          <pre><code>More info → Run anyway</code></pre>
+        </li>
+        <li><strong>Follow the installer prompts.</strong></li>
+        <li><strong>Launch Simple MD from the Start Menu.</strong></li>
+      </ol>
+      <div class="install-modal__footer">
+        <span class="meta">Windows 11 · ARM64</span>
+        <button class="btn btn--primary btn--sm" type="button" data-install-close>Got it</button>
+      </div>
+    </template>
+
+    <div id="install-modal-body"></div>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="site-foot__inner">
+    <div>
+      <a class="brand" href="./">
+        <span class="brand__mark">M</span>
+        <span style="color:var(--ink)">Simple MD</span>
+      </a>
+    </div>
+    <div class="site-foot__links">
+      <a href="docs.html">Documentation</a>
+      <a href="index.html#download">Download</a>
+      <a href="index.html#features">Features</a>
+      <a href="https://github.com/robrighter/simple-md" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline-block;vertical-align:-2px;margin-right:4px;"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.07c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.94 10.94 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>Source on GitHub</a>
+      <a href="https://github.com/robrighter/simple-md/releases" target="_blank" rel="noopener">Releases</a>
+      <a href="https://github.com/robrighter/simple-md/issues" target="_blank" rel="noopener">Issues</a>
+    </div>
+    <div>© 2026 Simple MD · Local-first since day one.</div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for in-page anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.feature, .mode-card, .download-card, .showcase, .checklist li')
+    .forEach(el => { el.classList.add('fade-up'); observer.observe(el); });
+
+  // OS detection — promote the matching download button.
+  (function () {
+    function detectOS() {
+      const ua = navigator.userAgent || '';
+      const platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+      const arch = (navigator.userAgentData && (navigator.userAgentData.architecture || '')) || '';
+
+      // Mac (incl. Apple Silicon — modern Safari spoofs Intel UA, but the platform is still "MacIntel").
+      if (/Mac|iPhone|iPad|iPod/i.test(platform) || /Mac OS X|Macintosh/i.test(ua)) {
+        return 'mac';
+      }
+
+      if (/Win/i.test(platform) || /Windows/i.test(ua)) {
+        // ARM64 sniff: userAgentData hints at "arm" architecture; UA strings include "ARM64".
+        if (/arm/i.test(arch) || /ARM64|aarch64/i.test(ua)) return 'win-arm';
+        return 'win-x64';
+      }
+
+      return null; // Linux / unknown — leave defaults alone.
+    }
+
+    const detected = detectOS();
+    if (!detected) return;
+
+    // Hero: promote matching button to primary, demote others to ghost.
+    const heroButtons = document.querySelectorAll('#hero-downloads a[data-download]');
+    heroButtons.forEach(btn => {
+      const isMatch = btn.getAttribute('data-download') === detected;
+      btn.classList.toggle('btn--primary', isMatch);
+      btn.classList.toggle('btn--ghost', !isMatch);
+    });
+
+    // Reorder: matched button first.
+    const heroRow = document.getElementById('hero-downloads');
+    if (heroRow) {
+      const match = heroRow.querySelector(`a[data-download="${detected}"]`);
+      if (match) heroRow.prepend(match);
+    }
+
+    // Download cards: tag the matching one.
+    const cardMap = {
+      'mac': 'download-mac',
+      'win-arm': 'download-win-arm',
+      'win-x64': 'download-win-x64',
+    };
+    const matchedCard = document.getElementById(cardMap[detected]);
+    if (matchedCard) matchedCard.dataset.recommended = 'true';
+  })();
+
+  // Install instructions modal
+  (function () {
+    const modal = document.getElementById('install-modal');
+    const body = document.getElementById('install-modal-body');
+    if (!modal || !body) return;
+
+    let lastFocus = null;
+
+    function openInstall(kind) {
+      const tpl = document.getElementById('install-' + kind);
+      if (!tpl) return;
+      body.innerHTML = '';
+      body.appendChild(tpl.content.cloneNode(true));
+      modal.dataset.open = 'true';
+      modal.setAttribute('aria-hidden', 'false');
+      lastFocus = document.activeElement;
+      const focusable = modal.querySelector('[data-install-close]');
+      if (focusable) focusable.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeInstall() {
+      modal.dataset.open = 'false';
+      modal.setAttribute('aria-hidden', 'true');
+      body.innerHTML = '';
+      document.body.style.overflow = '';
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    }
+
+    document.querySelectorAll('a[data-download]').forEach(a => {
+      a.addEventListener('click', () => {
+        // Let the browser handle the actual file download via the href + download attr;
+        // open the install dialog right after so it's visible regardless of download UI.
+        const kind = a.getAttribute('data-download');
+        setTimeout(() => openInstall(kind), 150);
+      });
+    });
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeInstall();
+      if (e.target.closest('[data-install-close]')) closeInstall();
+      const copyBtn = e.target.closest('[data-copy]');
+      if (copyBtn) {
+        const text = copyBtn.getAttribute('data-copy');
+        if (navigator.clipboard && text) {
+          navigator.clipboard.writeText(text).then(() => {
+            const original = copyBtn.textContent;
+            copyBtn.textContent = 'Copied ✓';
+            setTimeout(() => { copyBtn.textContent = original; }, 1600);
+          });
+        }
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.dataset.open === 'true') closeInstall();
+    });
+  })();
+</script>
+
+</body>
+</html>
